@@ -108,6 +108,9 @@ export default {
           this.showPopup(popupMessages.creationSuccess);
           this.$root.$children[0].$children[0].$children[0].$refs.content.scrollTo(0, 0);
           this.$root.$children[0].$children[0].$children[2].$refs.content.scrollTo(0, 0);
+          this.$root.$children[0].$children[0].$children[0].$children[6].extended = false;
+          this.$root.$children[0].$children[0].$children[0].$children[7].extended = false;
+          this.$root.$children[0].$children[0].$children[2].$children[0].extended = false;
         }
       }
     },
