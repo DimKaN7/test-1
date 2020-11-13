@@ -1,0 +1,76 @@
+@mixin info-cont($base_class) {
+
+  #{$base_class} {
+    width: 290px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    &__content {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .pair {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .spacer {
+          width: 10px;
+          height: 100%;
+          flex: 1 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@mixin check-radio() {
+  >span {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 4px;
+      border-bottom: 2px solid $text-color;
+      border-right: 2px solid $text-color;
+      height: 9px;
+      width: 4px;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  >input {
+    display: none;
+
+    &:checked ~span {
+      background: $secondary-color;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
